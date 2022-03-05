@@ -1,6 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const routes = express.Router()
 const membersSchema = require('../models/members')
+
+
+const jsonParser = bodyParser.json();
 
 
 
@@ -20,18 +24,18 @@ routes.get('/:id',(req, res)=>{
 
 
 
-routes.post('/',(req, res)=>{
-const member = membersSchema(req.body);
+
+routes.post('/',jsonParser, (req, res)=>{
+const member = membersSchema(req.body)
 member
 .save()
 .then((data)=>{res.json(data)})
-.catch((error)=>{
-   res.json({message:error})});
-
+.catch((error)=>
+   res.json({message:error}))
 })
       
 
-routes.put('/:id',(req, res)=>{
+routes.put('/:id', jsonParser ,(req, res)=>{
    const {id} =req.params;
    const {name, surname, age, label, description, random} = req.body
    membersSchema.updateOne({_id: id},{ $set: {name, surname, age, label, description, random}})

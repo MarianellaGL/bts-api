@@ -1,5 +1,4 @@
 const express = require ('express');
-
 const mongoose=require('mongoose');
 
 const app= express();
@@ -17,7 +16,7 @@ mongoose.connect(uri,{
    .then(()=>console.log('base de datos creadas'))
    .catch(e => console.log(e))
 
-const routes = require('../src/routes/routes');
+const routes = require('./routes/routes');
 
 
 

@@ -3,35 +3,38 @@
 GET http://localhost:9000/members HTTP/1.1
 
 ###
-GET http://localhost:9000/members/6206d7e28475a2ab0d948e6a HTTP/1.1
-
+GET http://localhost:9000/members/6223980104703445682dc978 HTTP/1.1
 
 ###
 
-POST  http://localhost:9000/localhost:9000/ HTTP/1.1
+GET http://localhost:9000/members/Jin HTTP/1.1
+
+###
+
+POST  http://localhost:9000/members HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Min YoonGi",
-    "age": 27,
+    "name": "Kim SeokJin",
+    "age": 29,
     "label": "BIGHIT ENT",
-    "description": "Raper/Singer",
-    "surname": "SUGA",
-    "random": "He plays piano and guitar"
+    "description": "Singer/Musician",
+    "surname": "Jin",
+    "random": "Has an Art and Acting degree"
 }
 
 ###
 
-DELETE  http://localhost:9000/members/6206d7e28475a2ab0d948e6a HTTP/1.1
+DELETE  http://localhost:9000/members/6223980104703445682dc978 HTTP/1.1
 
 ###
 
-PUT  http://localhost:9000/members/6206d7e28475a2ab0d948e6a HTTP/1.1
+PUT  http://localhost:9000/members/6223980104703445682dc978 HTTP/1.1
 Content-Type: application/json
 
 {
     "name": "Min YoonGi",
-    "age": 27,
+    "age": 28,
     "label": "BIGHIT ENT.",
     "description": "Raper/Singer/Musician",
     "surname": "SUGA",
